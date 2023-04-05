@@ -4,25 +4,19 @@ import { Floor } from "./Floor";
 import { range } from "../lib/utils";
 import { Elevator } from "./Elevator";
 import { useComponentDimensions } from "../hooks/useComponentDimensions";
-import { elevator } from "../lib/elevator";
 import { useElevator } from "../hooks/useElevator";
 
 type BuildingProps = {
   floorCount: number;
 };
 
-// const { callUp, callDown, setTarget, positions, stops } = elevator({
-//   floorCount: 6,
-// });
-
 export const Building = ({ floorCount }: BuildingProps) => {
   const floors = range(0, floorCount - 1);
-  const { onLayout, dimensions } = useComponentDimensions();
   const translateY = useRef(new Animated.Value(0)).current;
+  const { onLayout, dimensions } = useComponentDimensions();
   const itemSize = dimensions.height / (floorCount || 1);
-  // const [floor, setFloor] = useState(0);
 
-  const { callUp, callDown, setTarget, currentFloor: floor } = useElevator();
+  const { calls, callUp, callDown, setTarget, floor } = useElevator();
 
   const moveTo = (targetFloor: number) => {
     const offsetY = -(itemSize * targetFloor);
@@ -33,16 +27,6 @@ export const Building = ({ floorCount }: BuildingProps) => {
       useNativeDriver: true,
     }).start();
   };
-
-  // useEffect(() => {
-  //   const subscription1 = positions.subscribe(setFloor);
-  //   const subscription2 = stops.subscribe((s) => console.log("STOP:", s));
-
-  //   return () => {
-  //     subscription1.unsubscribe();
-  //     subscription2.unsubscribe();
-  //   };
-  // }, []);
 
   useEffect(() => {
     moveTo(floor);
@@ -67,20 +51,19 @@ export const Building = ({ floorCount }: BuildingProps) => {
         return (
           <Floor
             key={floor}
+            floorCount={floorCount}
             floor={floor}
-            onUpPress={() => {
+            onPressUp={() => {
               callUp(floor);
-              // setCalls([...calls, { floor: floor, direction: "up" }]);
             }}
-            onDownPress={() => {
+            onPressDown={() => {
               callDown(floor);
-              // setCalls([...calls, { floor: floor, direction: "down" }]);
             }}
             onPress={() => {
               setTarget(floor);
-              // setCalls([...calls, { floor: floor }]);
             }}
-            // isQueued={calls.some((c) => c.floor === floor)}
+            isQueued={calls.some((c) => c.floor === floor && !c.intention)}
+            intention={calls.find((c) => c.floor === floor)?.intention}
           />
         );
       })}

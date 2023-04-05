@@ -11,21 +11,23 @@ import { Separator } from "./Separator";
 import { IndicatorText } from "./IndicatorText";
 
 type FloorProps = ViewProps & {
+  floorCount: number;
   floor: number;
   isQueued?: boolean;
   intention?: "Up" | "Down";
   onPress?: (ev: GestureResponderEvent) => void;
-  onUpPress?: (ev: GestureResponderEvent) => void;
-  onDownPress?: (ev: GestureResponderEvent) => void;
+  onPressUp?: (ev: GestureResponderEvent) => void;
+  onPressDown?: (ev: GestureResponderEvent) => void;
 };
 
 export const Floor = ({
+  floorCount,
   floor,
   isQueued,
   intention,
   onPress,
-  onUpPress,
-  onDownPress,
+  onPressUp,
+  onPressDown,
   ...props
 }: FloorProps) => {
   return (
@@ -37,10 +39,12 @@ export const Floor = ({
     >
       <View style={styles.container}>
         <FloorButtons
+          up={floor !== floorCount - 1}
+          down={floor !== 0}
           style={styles.buttons}
-          direction={intention}
-          onUpPress={onUpPress}
-          onDownPress={onDownPress}
+          intention={intention}
+          onPressUp={onPressUp}
+          onPressDown={onPressDown}
         />
         <IndicatorText indicator={isQueued}>{floor}</IndicatorText>
         <Separator style={styles.separator} />
