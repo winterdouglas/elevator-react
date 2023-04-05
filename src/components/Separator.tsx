@@ -1,14 +1,21 @@
 import { StyleSheet, View, ViewProps } from "react-native";
+import { useTheme } from "../hooks/useTheme";
 
-type SeparatorProps = ViewProps & {};
+type SeparatorProps = ViewProps;
 
 export const Separator = (props: SeparatorProps) => {
-  return <View {...props} style={[styles.separator, props.style]} />;
+  const { separator } = useTheme();
+
+  return (
+    <View
+      {...props}
+      style={[styles.separator, { backgroundColor: separator }, props.style]}
+    />
+  );
 };
 
 const styles = StyleSheet.create({
   separator: {
     height: 2,
-    backgroundColor: "#000",
   },
 });

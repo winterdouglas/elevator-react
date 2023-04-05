@@ -16,7 +16,7 @@ type ElevatorPosition = {
   direction?: "Up" | "Down";
 };
 
-export const useElevator = (stepDelayMs: number = 1000) => {
+export const useElevator = (stepDelayMs = 1000) => {
   const [calls, setCalls] = useState<ElevatorCall[]>([]);
   const [currentPosition, setCurrentPosition] = useState<ElevatorPosition>({
     floor: 0,
@@ -116,7 +116,7 @@ export const useElevator = (stepDelayMs: number = 1000) => {
     };
 
     process();
-  }, [calls, currentPosition]);
+  }, [calls, currentPosition, stepDelayMs]);
 
   return {
     calls,

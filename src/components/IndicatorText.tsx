@@ -7,6 +7,7 @@ import {
   ViewStyle,
 } from "react-native";
 import { Indicator } from "./Indicator";
+import { useTheme } from "../hooks/useTheme";
 
 type IndicatorTextProps = TextProps & {
   indicator?: boolean;
@@ -20,10 +21,12 @@ export const IndicatorText = ({
   style: $styleOverride,
   ...props
 }: IndicatorTextProps) => {
+  const { text } = useTheme();
+
   return (
     <View style={[styles.container, $containerStyleOverride]}>
       {indicator && <Indicator style={styles.indicator} />}
-      <Text {...props} style={[styles.text, $styleOverride]}>
+      <Text {...props} style={[styles.text, { color: text }, $styleOverride]}>
         {children}
       </Text>
     </View>

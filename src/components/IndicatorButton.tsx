@@ -1,6 +1,4 @@
 import {
-  Button,
-  ButtonProps,
   StyleProp,
   StyleSheet,
   Text,
@@ -10,6 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 import { Indicator } from "./Indicator";
+import { useTheme } from "../hooks/useTheme";
 
 type IndicatorButtonProps = TouchableOpacityProps & {
   title?: string;
@@ -23,13 +22,15 @@ export const IndicatorButton = ({
   containerStyle: $containerStyleOverride,
   ...props
 }: IndicatorButtonProps) => {
+  const { primary } = useTheme();
+
   return (
     <View style={[styles.container, $containerStyleOverride]}>
       <View style={styles.indicatorContainer}>
         {indicator && <Indicator />}
       </View>
       <TouchableOpacity {...props}>
-        <Text style={styles.text}>{title}</Text>
+        <Text style={[{ color: primary }, styles.text]}>{title}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     minHeight: 8,
   },
   text: {
-    color: "rgb(0, 122, 255)",
+    fontSize: 16,
+    fontWeight: "500",
   },
 });

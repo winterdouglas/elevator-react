@@ -1,7 +1,6 @@
 import {
   GestureResponderEvent,
   StyleSheet,
-  Text,
   TouchableHighlight,
   View,
   ViewProps,
@@ -9,6 +8,7 @@ import {
 import { FloorButtons } from "./FloorButtons";
 import { Separator } from "./Separator";
 import { IndicatorText } from "./IndicatorText";
+import { useTheme } from "../hooks/useTheme";
 
 type FloorProps = ViewProps & {
   floorCount: number;
@@ -30,9 +30,11 @@ export const Floor = ({
   onPressDown,
   ...props
 }: FloorProps) => {
+  const { highlight } = useTheme();
+
   return (
     <TouchableHighlight
-      underlayColor="#EEEEEE"
+      underlayColor={highlight}
       onPress={onPress}
       {...props}
       style={[styles.pressable, props.style]}

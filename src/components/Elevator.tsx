@@ -1,13 +1,15 @@
-import { Animated, StyleSheet, ViewProps } from "react-native";
+import { Animated, ViewProps } from "react-native";
+import { useTheme } from "../hooks/useTheme";
 
-type ElevatorProps = Animated.AnimatedProps<ViewProps> & {};
+type ElevatorProps = Animated.AnimatedProps<ViewProps>;
 
 export const Elevator = (props: ElevatorProps) => {
-  return <Animated.View {...props} style={[styles.elevator, props.style]} />;
-};
+  const { secondary } = useTheme();
 
-const styles = StyleSheet.create({
-  elevator: {
-    backgroundColor: "#FFDEB4",
-  },
-});
+  return (
+    <Animated.View
+      {...props}
+      style={[{ backgroundColor: secondary }, props.style]}
+    />
+  );
+};
