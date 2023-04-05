@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
-    "format": "prettier"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "expo": "~48.0.9",
