@@ -1,6 +1,6 @@
 # elevator-react-native
 
-This is a tiny React Native app that simulates the behavior of an elevator.
+This is a tiny Expo React Native app that simulates the behavior of an elevator.
 
 ## About
 
