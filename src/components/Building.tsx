@@ -18,19 +18,17 @@ export const Building = ({ floorCount }: BuildingProps) => {
 
   const { calls, callUp, callDown, setTarget, floor } = useElevator();
 
-  const moveTo = (targetFloor: number) => {
-    const offsetY = -(itemSize * targetFloor);
-
-    Animated.timing(translateY, {
-      toValue: offsetY,
-      duration: 500,
-      useNativeDriver: true,
-    }).start();
-  };
-
   useEffect(() => {
-    moveTo(floor);
-  }, [floor]);
+    (function moveTo() {
+      const offsetY = -(itemSize * floor);
+
+      Animated.timing(translateY, {
+        toValue: offsetY,
+        duration: 500,
+        useNativeDriver: true,
+      }).start();
+    })();
+  }, [floor, itemSize, translateY]);
 
   return (
     <View style={styles.building} onLayout={onLayout}>
