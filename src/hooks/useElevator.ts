@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-
-export const remove = (array: ElevatorCall[], target: number) => {
-  return array.filter((a) => a.floor !== target);
-};
+import { useState } from "react";
+import { useElevatorLoop } from "./useElevatorLoop";
+import { removeBy, sortBy } from "../lib/utils";
 
 export type Intention = "Up" | "Down";
 
@@ -22,7 +20,6 @@ export const useElevator = (stepDelayMs = 1000) => {
     floor: 0,
     direction: undefined,
   });
-  const timeout = useRef<NodeJS.Timeout | null>(null);
 
   const isFloorCalled = (floor: number) =>
     calls.some((x) => x.floor === floor) || floor === currentPosition.floor;
@@ -51,12 +48,16 @@ export const useElevator = (stepDelayMs = 1000) => {
       return calls[0];
     }
 
-    const upperFloors = calls
-      .filter((c) => c.floor > currentFloor)
-      .sort((a, b) => a.floor - b.floor);
-    const lowerFloors = calls
-      .filter((c) => c.floor < currentFloor)
-      .sort((a, b) => b.floor - a.floor);
+    const upperFloors = sortBy(
+      calls.filter((c) => c.floor > currentFloor),
+      "floor",
+      "ascending"
+    );
+    const lowerFloors = sortBy(
+      calls.filter((c) => c.floor < currentFloor),
+      "floor",
+      "descending"
+    );
 
     if (currentDirection === "Up") {
       const nextUp = upperFloors.concat(lowerFloors)[0];
@@ -81,42 +82,34 @@ export const useElevator = (stepDelayMs = 1000) => {
     };
   };
 
-  useEffect(() => {
-    const process = () => {
-      if (calls.length) {
-        if (timeout.current) {
-          clearTimeout(timeout.current);
-        }
+  const process = () => {
+    if (calls.length) {
+      const nextCall = getNext(calls, currentPosition);
 
-        timeout.current = setTimeout(() => {
-          const nextCall = getNext(calls, currentPosition);
-
-          if (nextCall === undefined) {
-            return;
-          }
-
-          const target: ElevatorPosition =
-            nextCall.floor > currentPosition.floor
-              ? { direction: "Up", floor: currentPosition.floor + 1 }
-              : { direction: "Down", floor: currentPosition.floor - 1 };
-
-          setCurrentPosition(target);
-
-          if (
-            nextCall.floor === target.floor &&
-            (!nextCall.intention ||
-              nextCall.intention === target.direction ||
-              nextCall.isReversing)
-          ) {
-            setCalls((c) => remove(c, nextCall.floor));
-            return;
-          }
-        }, stepDelayMs);
+      if (nextCall === undefined) {
+        return;
       }
-    };
 
-    process();
-  }, [calls, currentPosition, stepDelayMs]);
+      const target: ElevatorPosition =
+        nextCall.floor > currentPosition.floor
+          ? { direction: "Up", floor: currentPosition.floor + 1 }
+          : { direction: "Down", floor: currentPosition.floor - 1 };
+
+      setCurrentPosition(target);
+
+      if (
+        nextCall.floor === target.floor &&
+        (!nextCall.intention ||
+          nextCall.intention === target.direction ||
+          nextCall.isReversing)
+      ) {
+        setCalls((prev) => removeBy(prev, "floor", nextCall.floor));
+        return;
+      }
+    }
+  };
+
+  useElevatorLoop(calls.length, process, stepDelayMs);
 
   return {
     calls,
