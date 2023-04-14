@@ -1,0 +1,4 @@
+{
+  "extends": "tsconfig-elevator/react.json",
+  "include": ["src", "typings", "vite.config.ts"]
+}

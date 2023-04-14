@@ -1,0 +1,28 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc --pretty",
+    "build": "tsc && vite build",
+    "web": "vite",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^3.1.0",
+    "eslint-config-elevator": "*",
+    "tsconfig-elevator": "*",
+    "typescript": "^4.9.4",
+    "vite": "^4.2.0"
+  }
+}
