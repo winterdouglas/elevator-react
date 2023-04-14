@@ -1,4 +1,4 @@
 {
   "extends": "tsconfig-elevator/react-native.json",
-  "include": ["src", "typings"]
+  "include": ["src"]
 }
