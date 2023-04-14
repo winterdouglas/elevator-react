@@ -6,7 +6,6 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "useDefineForClassFields": true,
-    "incremental": true
+    "useDefineForClassFields": true
   }
 }

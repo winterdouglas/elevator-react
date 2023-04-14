@@ -4472,7 +4472,7 @@ __metadata:
   resolution: "elevator-app@workspace:."
   dependencies:
     eslint: ^8.38.0
-    eslint-config-custom: "*"
+    eslint-config-elevator: "*"
     prettier: ^2.8.7
     turbo: latest
   languageName: unknown
@@ -4760,9 +4760,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-custom@*, eslint-config-custom@workspace:packages/eslint-config-custom":
+"eslint-config-elevator@*, eslint-config-elevator@workspace:packages/eslint-config-elevator":
   version: 0.0.0-use.local
-  resolution: "eslint-config-custom@workspace:packages/eslint-config-custom"
+  resolution: "eslint-config-elevator@workspace:packages/eslint-config-elevator"
   dependencies:
     "@typescript-eslint/eslint-plugin": latest
     "@typescript-eslint/parser": latest
@@ -7865,13 +7865,13 @@ __metadata:
     "@types/node": ^18.15.11
     "@types/react": ^18.0.28
     babel-plugin-module-resolver: ^5.0.0
-    eslint-config-custom: "*"
+    eslint-config-elevator: "*"
     expo: ~48.0.9
     expo-status-bar: ~1.4.4
     expo-system-ui: ^2.2.1
     react: 18.2.0
     react-native: 0.71.6
-    tsconfig: "*"
+    tsconfig-elevator: "*"
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
@@ -10366,9 +10366,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig@*, tsconfig@workspace:packages/tsconfig":
+"tsconfig-elevator@*, tsconfig-elevator@workspace:packages/tsconfig-elevator":
   version: 0.0.0-use.local
-  resolution: "tsconfig@workspace:packages/tsconfig"
+  resolution: "tsconfig-elevator@workspace:packages/tsconfig-elevator"
   languageName: unknown
   linkType: soft
 
@@ -10810,6 +10810,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "utils@workspace:packages/utils"
+  dependencies:
+    eslint-config-elevator: "*"
+    tsconfig-elevator: "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "uuid@npm:^3.3.2, uuid@npm:^3.4.0":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
@@ -10931,10 +10941,10 @@ __metadata:
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react": ^3.1.0
-    eslint-config-custom: "*"
+    eslint-config-elevator: "*"
     react: ^18.2.0
     react-dom: ^18.2.0
-    tsconfig: "*"
+    tsconfig-elevator: "*"
     typescript: ^4.9.4
     vite: ^4.2.0
   languageName: unknown

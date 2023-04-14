@@ -2,13 +2,14 @@
   "name": "mobile",
   "private": true,
   "version": "1.0.0",
+  "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
+    "compile": "tsc --pretty",
     "start": "expo start",
-    "android": "expo start --android",
     "ios": "expo start --ios",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+    "android": "expo start --android",
+    "lint": "eslint ."
   },
   "dependencies": {
     "expo": "~48.0.9",
@@ -22,8 +23,8 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "babel-plugin-module-resolver": "^5.0.0",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "eslint-config-elevator": "*",
+    "tsconfig-elevator": "*",
     "typescript": "^4.9.4"
   },
   "resolutions": {

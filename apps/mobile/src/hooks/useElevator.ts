@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { removeBy, sortBy } from "utils";
 import { useElevatorLoop } from "./useElevatorLoop";
-import { removeBy, sortBy } from "../lib/utils";
 
 export type Intention = "Up" | "Down";
 

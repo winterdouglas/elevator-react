@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Animated, StyleSheet, View } from "react-native";
 import { Floor } from "./Floor";
-import { range } from "../lib/utils";
+import { range } from "utils";
 import { Elevator } from "./Elevator";
 import { useComponentDimensions } from "../hooks/useComponentDimensions";
 import { useElevator } from "../hooks/useElevator";

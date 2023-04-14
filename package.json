@@ -1,9 +1,11 @@
 {
+  "name": "elevator-app",
   "private": true,
   "scripts": {
+    "compile": "turbo run compile",
     "build": "turbo run build",
-    "dev": "turbo run dev",
     "start": "turbo run start",
+    "web": "turbo run dev",
     "ios": "turbo run ios",
     "android": "turbo run android",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -12,11 +14,10 @@
   },
   "devDependencies": {
     "eslint": "^8.38.0",
-    "eslint-config-custom": "*",
+    "eslint-config-elevator": "*",
     "prettier": "^2.8.7",
     "turbo": "latest"
   },
-  "name": "elevator-app",
   "packageManager": "yarn@3.4.1",
   "workspaces": [
     "apps/*",

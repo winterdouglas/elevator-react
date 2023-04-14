@@ -2,8 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [],
   "pipeline": {
+    "compile": {},
     "build": {},
-    "dev": {
+    "web": {
+      "cache": false,
+      "persistent": true
+    },
+    "preview": {
       "cache": false,
       "persistent": true
     },
@@ -22,6 +27,7 @@
     "lint": {},
     "clean": {
       "cache": false
-    }
+    },
+    "format": {}
   }
 }

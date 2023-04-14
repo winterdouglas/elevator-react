@@ -1,0 +1,17 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "compile": "tsc --pretty",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint-config-elevator": "*",
+    "tsconfig-elevator": "*",
+    "typescript": "^4.9.4"
+  }
+}
