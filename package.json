@@ -10,9 +10,11 @@
     "android": "turbo run android",
     "clean": "turbo run clean && rm -rf node_modules",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "postinstall": "manypkg check"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@manypkg/cli": "latest",
     "eslint": "^8.38.0",
     "eslint-config-elevator": "workspace:^",
     "prettier": "^2.8.7",
@@ -27,5 +29,10 @@
     "react": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18"
+  },
+  "manypkg": {
+    "ignoredRules": [
+      "INTERNAL_MISMATCH"
+    ]
   }
 }
