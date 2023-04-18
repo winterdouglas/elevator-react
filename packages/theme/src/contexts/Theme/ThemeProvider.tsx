@@ -1,7 +1,6 @@
 import { PropsWithChildren } from "react";
 import { ThemeContext } from "./ThemeContext";
-import { darkTheme } from "../../theme/darkTheme";
-import { lightTheme } from "../../theme/lightTheme";
+import { darkTheme, lightTheme } from "../../theme";
 
 type ThemeProviderProps = PropsWithChildren & {
   theme: "light" | "dark";
