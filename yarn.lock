@@ -2636,7 +2636,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18.0.11":
+"@types/react-dom@npm:^18":
   version: 18.0.11
   resolution: "@types/react-dom@npm:18.0.11"
   dependencies:
@@ -2645,14 +2645,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.28":
-  version: 18.0.35
-  resolution: "@types/react@npm:18.0.35"
+"@types/react-native@npm:^0.71.6":
+  version: 0.71.6
+  resolution: "@types/react-native@npm:0.71.6"
+  dependencies:
+    "@types/react": "*"
+  checksum: 067325c549e7181c73cdf8da1cb7bdef226124d91c3f72fcc2fb8b3c98a2d184f74a16ba627e3192253103bd651e8238d0e722b93f762b3f1a3f5b96773ec7a5
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18":
+  version: 18.0.37
+  resolution: "@types/react@npm:18.0.37"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: e65670397216e037b150a509ec08189140b4c20b82b612ac00b2a7133202be2d1def1e7ee69617b2df06ab4c00c43c4ee23e84788ad661aea9664da2f27c518a
+  checksum: 6a6c8feada1d6aa2d01a38c44ce09598d93688e97ed21511d5e34fd7fe748b760dd957a5ac0725f5643d8d7e1a0ade6478ebd4be96c9605c5d6816b17ad35d2d
   languageName: node
   linkType: hard
 
@@ -4215,9 +4224,9 @@ __metadata:
   linkType: hard
 
 "csstype@npm:^3.0.2":
-  version: 3.1.1
-  resolution: "csstype@npm:3.1.1"
-  checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
+  version: 3.1.2
+  resolution: "csstype@npm:3.1.2"
+  checksum: e1a52e6c25c1314d6beef5168da704ab29c5186b877c07d822bd0806717d9a265e8493a2e35ca7e68d0f5d472d43fac1cdce70fd79fd0853dff81f3028d857b5
   languageName: node
   linkType: hard
 
@@ -4467,12 +4476,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"elevator-app@workspace:.":
+"elevator-core@workspace:^, elevator-core@workspace:packages/elevator-core":
   version: 0.0.0-use.local
-  resolution: "elevator-app@workspace:."
+  resolution: "elevator-core@workspace:packages/elevator-core"
+  dependencies:
+    "@types/react": ^18.0.37
+    eslint-config-elevator: "workspace:^"
+    react: 18.2.0
+    tsconfig-elevator: "workspace:^"
+    typescript: ^4.9.4
+    utils: "workspace:^"
+  languageName: unknown
+  linkType: soft
+
+"elevator-root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "elevator-root@workspace:."
   dependencies:
     eslint: ^8.38.0
-    eslint-config-elevator: "*"
+    eslint-config-elevator: "workspace:^"
     prettier: ^2.8.7
     turbo: latest
   languageName: unknown
@@ -4760,7 +4782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-elevator@*, eslint-config-elevator@workspace:packages/eslint-config-elevator":
+"eslint-config-elevator@workspace:^, eslint-config-elevator@workspace:packages/eslint-config-elevator":
   version: 0.0.0-use.local
   resolution: "eslint-config-elevator@workspace:packages/eslint-config-elevator"
   dependencies:
@@ -7863,15 +7885,19 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@types/node": ^18.15.11
-    "@types/react": ^18.0.28
+    "@types/react": ^18.0.37
+    "@types/react-dom": ^18.0.11
+    "@types/react-native": ^0.71.6
     babel-plugin-module-resolver: ^5.0.0
-    eslint-config-elevator: "*"
+    elevator-core: "workspace:^"
+    eslint-config-elevator: "workspace:^"
     expo: ~48.0.9
     expo-status-bar: ~1.4.4
     expo-system-ui: ^2.2.1
     react: 18.2.0
     react-native: 0.71.6
-    tsconfig-elevator: "*"
+    theme: "workspace:^"
+    tsconfig-elevator: "workspace:^"
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
@@ -8866,7 +8892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -8990,7 +9016,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:18.2.0, react@npm:^18.2.0":
+"react@npm:^18":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -10233,6 +10259,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"theme@workspace:^, theme@workspace:packages/theme":
+  version: 0.0.0-use.local
+  resolution: "theme@workspace:packages/theme"
+  dependencies:
+    "@types/react": ^18.0.37
+    eslint-config-elevator: "workspace:^"
+    react: 18.2.0
+    tsconfig-elevator: "workspace:^"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "thenify-all@npm:^1.0.0":
   version: 1.6.0
   resolution: "thenify-all@npm:1.6.0"
@@ -10366,7 +10404,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-elevator@*, tsconfig-elevator@workspace:packages/tsconfig-elevator":
+"tsconfig-elevator@workspace:^, tsconfig-elevator@workspace:packages/tsconfig-elevator":
   version: 0.0.0-use.local
   resolution: "tsconfig-elevator@workspace:packages/tsconfig-elevator"
   languageName: unknown
@@ -10810,12 +10848,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utils@workspace:packages/utils":
+"utils@workspace:^, utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "utils@workspace:packages/utils"
   dependencies:
-    eslint-config-elevator: "*"
-    tsconfig-elevator: "*"
+    eslint-config-elevator: "workspace:^"
+    tsconfig-elevator: "workspace:^"
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
@@ -10938,13 +10976,15 @@ __metadata:
   resolution: "web@workspace:apps/web"
   dependencies:
     "@types/node": ^18.15.11
-    "@types/react": ^18.0.28
+    "@types/react": ^18.0.37
     "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react": ^3.1.0
-    eslint-config-elevator: "*"
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    tsconfig-elevator: "*"
+    elevator-core: "workspace:^"
+    eslint-config-elevator: "workspace:^"
+    react: 18.2.0
+    react-dom: 18.2.0
+    theme: "workspace:^"
+    tsconfig-elevator: "workspace:^"
     typescript: ^4.9.4
     vite: ^4.2.0
   languageName: unknown

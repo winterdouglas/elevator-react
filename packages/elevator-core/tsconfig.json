@@ -1,0 +1,4 @@
+{
+  "extends": "tsconfig-elevator/base.json",
+  "include": ["src"]
+}

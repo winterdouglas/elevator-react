@@ -1,5 +1,5 @@
 import { StyleSheet, View, ViewProps } from "react-native";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "theme";
 
 type IndicatorProps = ViewProps;
 

@@ -1,5 +1,5 @@
 {
-  "name": "elevator-app",
+  "name": "elevator-root",
   "private": true,
   "scripts": {
     "compile": "turbo run compile",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "eslint": "^8.38.0",
-    "eslint-config-elevator": "*",
+    "eslint-config-elevator": "workspace:^",
     "prettier": "^2.8.7",
     "turbo": "latest"
   },
@@ -22,5 +22,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "resolutions": {
+    "react": "^18",
+    "@types/react": "^18",
+    "@types/react-dom": "^18"
+  }
 }

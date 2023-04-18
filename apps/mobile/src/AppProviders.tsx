@@ -1,10 +1,13 @@
+import { useColorScheme } from "react-native";
+import { ThemeProvider } from "theme";
 import App from "./App";
-import { Providers } from "./contexts/Providers";
 
 export const AppProviders = () => {
+  const theme = useColorScheme();
+
   return (
-    <Providers>
+    <ThemeProvider theme={theme || "light"}>
       <App />
-    </Providers>
+    </ThemeProvider>
   );
 };

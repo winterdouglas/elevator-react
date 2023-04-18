@@ -1,4 +1,4 @@
-export const dark = {
+export const darkTheme = {
   text: "#edebf0",
   background: "#263236",
   primary: "#ff9921",
@@ -6,4 +6,4 @@ export const dark = {
   tertiary: "#5AAF7C",
   highlight: "#60687B",
   separator: "#fff",
-};
+} as const;

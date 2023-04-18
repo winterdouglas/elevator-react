@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "theme",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -9,7 +9,11 @@
     "compile": "tsc --pretty",
     "lint": "eslint ."
   },
+  "dependencies": {
+    "react": "18.2.0"
+  },
   "devDependencies": {
+    "@types/react": "^18.0.37",
     "eslint-config-elevator": "workspace:^",
     "tsconfig-elevator": "workspace:^",
     "typescript": "^4.9.4"

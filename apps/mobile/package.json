@@ -12,24 +12,23 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "elevator-core": "workspace:^",
     "expo": "~48.0.9",
     "expo-status-bar": "~1.4.4",
     "expo-system-ui": "^2.2.1",
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "theme": "workspace:^"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-native": "^0.71.6",
     "babel-plugin-module-resolver": "^5.0.0",
-    "eslint-config-elevator": "*",
-    "tsconfig-elevator": "*",
+    "eslint-config-elevator": "workspace:^",
+    "tsconfig-elevator": "workspace:^",
     "typescript": "^4.9.4"
-  },
-  "resolutions": {
-    "react": "^18",
-    "@types/react": "^18",
-    "@types/react-native": "^18"
   }
 }

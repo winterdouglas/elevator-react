@@ -1,4 +1,4 @@
-export const light = {
+export const lightTheme = {
   text: "#364955",
   background: "#fff",
   primary: "#007BAF",
@@ -6,4 +6,4 @@ export const light = {
   tertiary: "#27B881",
   highlight: "#F1FBFF",
   separator: "#000",
-};
+} as const;

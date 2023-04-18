@@ -12,16 +12,18 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "elevator-core": "workspace:^",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "theme": "workspace:^"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
-    "eslint-config-elevator": "*",
-    "tsconfig-elevator": "*",
+    "eslint-config-elevator": "workspace:^",
+    "tsconfig-elevator": "workspace:^",
     "typescript": "^4.9.4",
     "vite": "^4.2.0"
   }
