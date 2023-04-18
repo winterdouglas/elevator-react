@@ -1,0 +1,22 @@
+{
+  "name": "elevator-core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "compile": "tsc --pretty",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "eslint-config-elevator": "workspace:^",
+    "tsconfig-elevator": "workspace:^",
+    "typescript": "^4.9.4",
+    "utils": "workspace:^"
+  }
+}

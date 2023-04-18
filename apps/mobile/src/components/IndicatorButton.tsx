@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 import { Indicator } from "./Indicator";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "theme";
 
 type IndicatorButtonProps = TouchableOpacityProps & {
   title?: string;

@@ -4,7 +4,7 @@ import { Floor } from "./Floor";
 import { range } from "utils";
 import { Elevator } from "./Elevator";
 import { useComponentDimensions } from "../hooks/useComponentDimensions";
-import { useElevator } from "../hooks/useElevator";
+import { useElevator } from "elevator-core";
 
 type BuildingProps = {
   floorCount: number;

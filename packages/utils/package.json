@@ -1,6 +1,6 @@
 {
   "name": "utils",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "main": "src/index.ts",
@@ -10,8 +10,8 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "eslint-config-elevator": "*",
-    "tsconfig-elevator": "*",
+    "eslint-config-elevator": "workspace:^",
+    "tsconfig-elevator": "workspace:^",
     "typescript": "^4.9.4"
   }
 }

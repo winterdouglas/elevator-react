@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet } from "react-native";
+import { useTheme } from "theme";
 import { Building } from "./components/Building";
-import { useTheme } from "./hooks/useTheme";
 
 export default function App() {
   const { background } = useTheme();

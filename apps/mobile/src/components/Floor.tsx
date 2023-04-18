@@ -8,7 +8,7 @@ import {
 import { FloorButtons } from "./FloorButtons";
 import { Separator } from "./Separator";
 import { IndicatorText } from "./IndicatorText";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "theme";
 
 type FloorProps = ViewProps & {
   floorCount: number;

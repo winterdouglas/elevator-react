@@ -1,5 +1,5 @@
 import { Animated, ViewProps } from "react-native";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "theme";
 
 type ElevatorProps = Animated.AnimatedProps<ViewProps>;
 
