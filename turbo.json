@@ -24,10 +24,14 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {},
+    "lint": {
+      "cache": false
+    },
     "clean": {
       "cache": false
     },
-    "format": {}
+    "format": {
+      "cache": false
+    }
   }
 }

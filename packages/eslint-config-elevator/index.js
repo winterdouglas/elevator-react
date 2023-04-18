@@ -6,6 +6,8 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    // "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -17,7 +19,20 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: [
+    "react",
+    // This in combination with the no-extraneous-dependencies below prevents the usage of an unreferenced package in the monorepo
+    "import",
+    "@typescript-eslint",
+  ],
   ignorePatterns: ["*.cjs", "*.config.js"],
-  rules: {},
+  rules: {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
+  },
 };

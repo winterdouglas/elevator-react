@@ -7,8 +7,7 @@
   "types": "src/index.ts",
   "scripts": {
     "compile": "tsc --pretty",
-    "lint": "eslint .",
-    "utils": "workspace:^"
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "18.2.0"
@@ -17,6 +16,7 @@
     "@types/react": "^18.0.37",
     "eslint-config-elevator": "workspace:^",
     "tsconfig-elevator": "workspace:^",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "utils": "workspace:^"
   }
 }
