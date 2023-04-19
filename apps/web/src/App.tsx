@@ -1,17 +1,17 @@
 import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "theme";
 import { GlobalStyle } from "./GlobalStyle";
 import { useColorScheme } from "./hooks/useColorScheme";
-import { darkTheme, lightTheme } from "theme";
+import { Building } from "./components/Building";
 
 export const App = () => {
   const colorScheme = useColorScheme();
 
-  console.log(colorScheme);
-
   return (
     <ThemeProvider theme={colorScheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
-      <span>Hello!</span>
+
+      <Building floorCount={6} />
     </ThemeProvider>
   );
 };

@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
 
-    color-scheme: light dark;
+    color-scheme: dark light;
     color: ${(props) => props.theme.text};
     background-color: ${(props) => props.theme.background};
   }
@@ -14,6 +14,12 @@ export const GlobalStyle = createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding:0;
+    font: inherit;
   }
 
   /* Remove default margin */
@@ -61,11 +67,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* Inherit fonts for inputs and buttons */
-  input,
+  /* input,
   button,
   textarea,
   select {
     font: inherit;
+  } */
+
+  a, button {
+    cursor: pointer;
   }
 
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
