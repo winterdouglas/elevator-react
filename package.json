@@ -6,6 +6,7 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "web": "turbo run web",
+    "preview": "turbo run preview",
     "ios": "turbo run ios",
     "android": "turbo run android",
     "clean": "turbo run clean && rm -rf node_modules",
