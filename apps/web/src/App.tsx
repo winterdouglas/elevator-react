@@ -3,8 +3,10 @@ import { darkTheme, lightTheme } from "theme";
 import { GlobalStyle } from "./GlobalStyle";
 import { useColorScheme } from "./hooks/useColorScheme";
 import { Building } from "./components/Building";
+import { useAnimationAccessibility } from "./hooks/useAnimationAccessibility";
 
 export const App = () => {
+  useAnimationAccessibility();
   const colorScheme = useColorScheme();
 
   return (

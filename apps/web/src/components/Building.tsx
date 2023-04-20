@@ -16,7 +16,7 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-const Wrapper = styled.div`
+const List = styled.div`
   position: relative;
 `;
 
@@ -34,7 +34,7 @@ type BuildingProps = {
 
 export const Building = ({ floorCount }: BuildingProps) => {
   const floors = range(0, floorCount - 1).reverse();
-  const { calls, callUp, callDown, setTarget, floor } = useElevator();
+  const { calls, callUp, callDown, setTarget, currentFloor } = useElevator();
   const itemSizePercent = 100 / (floors.length || 1);
 
   const [styles, api] = useSpring(() => ({
@@ -43,20 +43,23 @@ export const Building = ({ floorCount }: BuildingProps) => {
   }));
 
   useEffect(() => {
-    api.start({ y: `${-(floor * 100)}%` });
-  }, [api, floor, itemSizePercent]);
+    api.start({ y: `${-(currentFloor * 100)}%` });
+  }, [api, currentFloor, itemSizePercent]);
 
   return (
     <MainContent>
       <Title>Elevator</Title>
-      <Wrapper>
-        <Elevator style={styles} />
+      <List role="listbox" aria-label="Floors">
+        <Elevator role="none" style={styles} />
         {floors.map((floor) => {
           return (
             <Floor
               key={floor}
               floorCount={floorCount}
               floor={floor}
+              isElevatorPresent={floor === currentFloor}
+              isQueued={calls.some((c) => c.floor === floor && !c.intention)}
+              intention={calls.find((c) => c.floor === floor)?.intention}
               onPressUp={() => {
                 callUp(floor);
               }}
@@ -66,12 +69,10 @@ export const Building = ({ floorCount }: BuildingProps) => {
               onPress={() => {
                 setTarget(floor);
               }}
-              isQueued={calls.some((c) => c.floor === floor && !c.intention)}
-              intention={calls.find((c) => c.floor === floor)?.intention}
             />
           );
         })}
-      </Wrapper>
+      </List>
     </MainContent>
   );
 };

@@ -20,22 +20,16 @@ const Button = styled.button`
   }
 `;
 
-const Text = styled.span``;
-
 type FloorButtonProps = HTMLAttributes<HTMLButtonElement> & {
   title?: string;
-  hideIndicator?: boolean;
+  toggled?: boolean;
 };
 
-export const FloorButton = ({
-  title,
-  hideIndicator,
-  ...props
-}: FloorButtonProps) => {
+export const FloorButton = ({ title, toggled, ...props }: FloorButtonProps) => {
   return (
     <Button {...props}>
-      <Indicator hidden={hideIndicator} />
-      <Text>{title}</Text>
+      <Indicator hide={!toggled} />
+      {title}
     </Button>
   );
 };

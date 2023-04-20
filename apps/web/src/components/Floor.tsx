@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Indicator } from "./Indicator";
 
-const FloorCell = styled.div`
+const FloorCell = styled.section`
   position: relative;
   isolation: isolate;
-  // padding: 3rem 1rem;
   min-height: 10rem;
   display: flex;
   align-items: center;
@@ -21,6 +20,10 @@ const FloorCell = styled.div`
   }
 `;
 
+const FloorTitle = styled.h2`
+  font-size: 3rem;
+`;
+
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +36,6 @@ const PressableFloor = styled.button`
   z-index: -1;
   border-width: 0;
   background: transparent;
-  font-size: 3rem;
 
   display: flex;
   flex-direction: row;
@@ -44,14 +46,16 @@ const PressableFloor = styled.button`
     background-color: ${(props) => props.theme.secondary};
   }
 
-  &:active {
-    background-color: ${(props) => props.theme.highlight};
+  [aria-selected="true"] > &:hover {
+    background-color: transparent;
+    cursor: default;
   }
 `;
 
 type FloorProps = {
   floorCount: number;
   floor: number;
+  isElevatorPresent?: boolean;
   isQueued?: boolean;
   intention?: "Up" | "Down";
   onPress?: () => void;
@@ -62,35 +66,47 @@ type FloorProps = {
 export const Floor = ({
   floorCount,
   floor,
+  isElevatorPresent,
   isQueued,
   intention,
   onPress,
   onPressUp,
   onPressDown,
-}: // ...props
-FloorProps) => {
+}: FloorProps) => {
   return (
-    <FloorCell>
+    <FloorCell
+      role="option"
+      aria-label={`Floor ${floor}`}
+      aria-selected={isElevatorPresent}>
+      <PressableFloor
+        aria-label={`Call floor ${floor}`}
+        aria-disabled={isElevatorPresent}
+        onClick={onPress}>
+        <Indicator hide={!isQueued} />
+        <FloorTitle>{floor}</FloorTitle>
+      </PressableFloor>
       <ButtonsContainer>
         {floor < floorCount - 1 && (
           <FloorButton
             title="Up"
-            hideIndicator={intention !== "Up"}
+            toggled={intention === "Up"}
+            aria-label={`Call floor ${floor} Up`}
+            aria-pressed={intention === "Up"}
+            aria-disabled={isElevatorPresent}
             onClick={onPressUp}
           />
         )}
         {floor > 0 && (
           <FloorButton
             title="Down"
-            hideIndicator={intention !== "Down"}
+            toggled={intention === "Down"}
+            aria-label={`Call floor ${floor} Down`}
+            aria-pressed={intention === "Down"}
+            aria-disabled={isElevatorPresent}
             onClick={onPressDown}
           />
         )}
       </ButtonsContainer>
-      <PressableFloor onClick={onPress}>
-        <Indicator hidden={!isQueued} />
-        {floor}
-      </PressableFloor>
     </FloorCell>
   );
 };
