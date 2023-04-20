@@ -9,7 +9,7 @@ const FloorCell = styled.section`
   display: flex;
   align-items: center;
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -46,7 +46,7 @@ const PressableFloor = styled.button`
     background-color: ${(props) => props.theme.secondary};
   }
 
-  [aria-selected="true"] > &:hover {
+  ${FloorCell}[aria-selected="true"] > &:hover {
     background-color: transparent;
     cursor: default;
   }
