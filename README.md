@@ -4,9 +4,10 @@ This is a tiny Expo React Native / Vite React app that simulates the behavior of
 
 [![Deploy static content to Pages](https://github.com/winterdouglas/elevator-react-native/actions/workflows/github-pages.yml/badge.svg)](https://github.com/winterdouglas/elevator-react-native/actions/workflows/github-pages.yml)
 
-## About
+## Description
 
 The projects are in a monorepo configured with turborepo and yarn workspaces, that enables sharing some code between web and mobile.
+
 - tsconfig (typescript base configs for react and react native apps)
 - eslint-config (common eslint configurations)
 - theme (eg.: colors and layout aspects)
@@ -23,3 +24,9 @@ The apps uses some basic components and react hooks to create the elevator logic
 | Dark                                                         | Light                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------- |
 | ![Screenshot of the app in dark mode](/screenshots/dark.png) | ![Screenshot of the app in dark mode](/screenshots/light.png) |
+
+## About
+
+This project uses many great open-source tools, including but not limited to:
+
+- Favicon: "Cityscape At Dusk" from https://twemoji.twitter.com - [LICENSE](https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS)
