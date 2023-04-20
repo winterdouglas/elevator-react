@@ -16,11 +16,11 @@ export const Building = ({ floorCount }: BuildingProps) => {
   const { onLayout, dimensions } = useComponentDimensions();
   const itemSize = dimensions.height / (floorCount || 1);
 
-  const { calls, callUp, callDown, setTarget, floor } = useElevator();
+  const { calls, callUp, callDown, setTarget, currentFloor } = useElevator();
 
   useEffect(() => {
     (function moveTo() {
-      const offsetY = -(itemSize * floor);
+      const offsetY = -(itemSize * currentFloor);
 
       Animated.timing(translateY, {
         toValue: offsetY,
@@ -28,7 +28,7 @@ export const Building = ({ floorCount }: BuildingProps) => {
         useNativeDriver: true,
       }).start();
     })();
-  }, [floor, itemSize, translateY]);
+  }, [currentFloor, itemSize, translateY]);
 
   return (
     <View style={styles.building} onLayout={onLayout}>

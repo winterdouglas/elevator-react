@@ -22,17 +22,13 @@ const Button = styled.button`
 
 type FloorButtonProps = HTMLAttributes<HTMLButtonElement> & {
   title?: string;
-  hideIndicator?: boolean;
+  toggled?: boolean;
 };
 
-export const FloorButton = ({
-  title,
-  hideIndicator,
-  ...props
-}: FloorButtonProps) => {
+export const FloorButton = ({ title, toggled, ...props }: FloorButtonProps) => {
   return (
     <Button {...props}>
-      <Indicator hidden={hideIndicator} />
+      <Indicator hide={!toggled} />
       {title}
     </Button>
   );

@@ -113,7 +113,7 @@ export const useElevator = (stepDelayMs = 1000) => {
 
   return {
     calls,
-    floor: currentPosition.floor,
+    currentFloor: currentPosition.floor,
     callUp,
     callDown,
     setTarget,
