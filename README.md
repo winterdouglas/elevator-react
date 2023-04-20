@@ -4,6 +4,8 @@ This is a tiny Expo React Native / Vite React app that simulates the behavior of
 
 [![Deploy static content to Pages](https://github.com/winterdouglas/elevator-react-native/actions/workflows/github-pages.yml/badge.svg)](https://github.com/winterdouglas/elevator-react-native/actions/workflows/github-pages.yml)
 
+[Web app](https://winterdouglas.github.io/elevator-react)
+
 ## Description
 
 The projects are in a monorepo configured with turborepo and yarn workspaces, that enables sharing some code between web and mobile.
