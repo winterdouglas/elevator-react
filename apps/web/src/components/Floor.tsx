@@ -2,10 +2,9 @@ import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Indicator } from "./Indicator";
 
-const FloorCell = styled.div`
+const FloorCell = styled.section`
   position: relative;
   isolation: isolate;
-  // padding: 3rem 1rem;
   min-height: 10rem;
   display: flex;
   align-items: center;
@@ -21,6 +20,10 @@ const FloorCell = styled.div`
   }
 `;
 
+const FloorTitle = styled.h2`
+  font-size: 3rem;
+`;
+
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,7 +36,6 @@ const PressableFloor = styled.button`
   z-index: -1;
   border-width: 0;
   background: transparent;
-  font-size: 3rem;
 
   display: flex;
   flex-direction: row;
@@ -71,6 +73,10 @@ export const Floor = ({
 FloorProps) => {
   return (
     <FloorCell>
+      <PressableFloor onClick={onPress}>
+        <Indicator hidden={!isQueued} />
+        <FloorTitle>{floor}</FloorTitle>
+      </PressableFloor>
       <ButtonsContainer>
         {floor < floorCount - 1 && (
           <FloorButton
@@ -87,10 +93,6 @@ FloorProps) => {
           />
         )}
       </ButtonsContainer>
-      <PressableFloor onClick={onPress}>
-        <Indicator hidden={!isQueued} />
-        {floor}
-      </PressableFloor>
     </FloorCell>
   );
 };

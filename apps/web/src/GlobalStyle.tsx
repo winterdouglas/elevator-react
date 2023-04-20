@@ -22,20 +22,6 @@ export const GlobalStyle = createGlobalStyle`
     font: inherit;
   }
 
-  /* Remove default margin */
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin: 0;
-  }
-
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
   ul[role='list'],
   ol[role='list'] {
@@ -61,18 +47,12 @@ export const GlobalStyle = createGlobalStyle`
 
   /* Make images easier to work with */
   img,
-  picture {
+  picture,
+  svg,
+  video {
     max-width: 100%;
     display: block;
   }
-
-  /* Inherit fonts for inputs and buttons */
-  /* input,
-  button,
-  textarea,
-  select {
-    font: inherit;
-  } */
 
   a, button {
     cursor: pointer;

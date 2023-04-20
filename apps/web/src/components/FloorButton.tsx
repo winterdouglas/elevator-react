@@ -20,8 +20,6 @@ const Button = styled.button`
   }
 `;
 
-const Text = styled.span``;
-
 type FloorButtonProps = HTMLAttributes<HTMLButtonElement> & {
   title?: string;
   hideIndicator?: boolean;
@@ -35,7 +33,7 @@ export const FloorButton = ({
   return (
     <Button {...props}>
       <Indicator hidden={hideIndicator} />
-      <Text>{title}</Text>
+      {title}
     </Button>
   );
 };
