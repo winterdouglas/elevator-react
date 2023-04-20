@@ -37,8 +37,7 @@ export const Floor = ({
       underlayColor={highlight}
       onPress={onPress}
       {...props}
-      style={[styles.pressable, props.style]}
-    >
+      style={[styles.pressable, props.style]}>
       <View style={styles.container}>
         <FloorButtons
           up={floor !== floorCount - 1}

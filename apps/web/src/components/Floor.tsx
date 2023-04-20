@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
-import { Dot } from "../assets/icons/Dot";
 import { Indicator } from "./Indicator";
 
 const FloorCell = styled.div`
