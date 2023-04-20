@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Dot } from "../assets/icons/Dot";
 import { HTMLAttributes } from "react";
+import styled from "styled-components";
+import { Indicator } from "./Indicator";
 
 const Button = styled.button`
   display: flex;
@@ -24,12 +24,17 @@ const Text = styled.span``;
 
 type FloorButtonProps = HTMLAttributes<HTMLButtonElement> & {
   title?: string;
+  hideIndicator?: boolean;
 };
 
-export const FloorButton = ({ title, ...props }: FloorButtonProps) => {
+export const FloorButton = ({
+  title,
+  hideIndicator,
+  ...props
+}: FloorButtonProps) => {
   return (
     <Button {...props}>
-      <Dot />
+      <Indicator hidden={hideIndicator} />
       <Text>{title}</Text>
     </Button>
   );

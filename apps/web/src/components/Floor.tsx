@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Dot } from "../assets/icons/Dot";
+import { Indicator } from "./Indicator";
 
 const FloorCell = styled.div`
   position: relative;
   isolation: isolate;
-  padding: 3rem 1rem;
+  // padding: 3rem 1rem;
+  min-height: 10rem;
   display: flex;
+  align-items: center;
 
   &:after {
     content: "";
@@ -20,7 +23,6 @@ const FloorCell = styled.div`
 `;
 
 const ButtonsContainer = styled.div`
-  // display: inline;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -71,11 +73,23 @@ FloorProps) => {
   return (
     <FloorCell>
       <ButtonsContainer>
-        <FloorButton title="Up" onClick={onPressUp} />
-        <FloorButton title="Down" onClick={onPressDown} />
+        {floor < floorCount - 1 && (
+          <FloorButton
+            title="Up"
+            hideIndicator={intention !== "Up"}
+            onClick={onPressUp}
+          />
+        )}
+        {floor > 0 && (
+          <FloorButton
+            title="Down"
+            hideIndicator={intention !== "Down"}
+            onClick={onPressDown}
+          />
+        )}
       </ButtonsContainer>
       <PressableFloor onClick={onPress}>
-        <Dot />
+        <Indicator hidden={!isQueued} />
         {floor}
       </PressableFloor>
     </FloorCell>

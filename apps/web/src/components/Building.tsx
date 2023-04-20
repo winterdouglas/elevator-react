@@ -66,8 +66,8 @@ export const Building = ({ floorCount }: BuildingProps) => {
               onPress={() => {
                 setTarget(floor);
               }}
-              // isQueued={calls.some((c) => c.floor === floor && !c.intention)}
-              // intention={calls.find((c) => c.floor === floor)?.intention}
+              isQueued={calls.some((c) => c.floor === floor && !c.intention)}
+              intention={calls.find((c) => c.floor === floor)?.intention}
             />
           );
         })}
