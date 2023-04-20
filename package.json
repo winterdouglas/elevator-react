@@ -5,7 +5,7 @@
     "compile": "turbo run compile",
     "build": "turbo run build",
     "start": "turbo run start",
-    "web": "turbo run dev",
+    "web": "turbo run web",
     "ios": "turbo run ios",
     "android": "turbo run android",
     "clean": "turbo run clean && rm -rf node_modules",
@@ -27,6 +27,7 @@
   ],
   "resolutions": {
     "react": "^18",
+    "styled-components": "^5",
     "@types/react": "^18",
     "@types/react-dom": "^18"
   },
