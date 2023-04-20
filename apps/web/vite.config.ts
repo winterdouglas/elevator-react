@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   cacheDir: ".vite",
   build: {
+    // https://styled-components.com/docs/faqs#removing-styledcomponents-from-your-library-bundle
     rollupOptions: {
-      // https://styled-components.com/docs/faqs#removing-styledcomponents-from-your-library-bundle
       external: ["styled-components"],
     },
   },
