@@ -8,6 +8,10 @@ import { visuallyHidden } from "../mixins";
 
 const MainContent = styled.main`
   position: relative;
+
+  // This is done to facilitate centering the list
+  width: 100vw;
+  width: 100dvw;
   height: 100vh;
   height: 100dvh;
 `;
@@ -23,19 +27,22 @@ const List = styled.div`
   position: absolute;
   inset: 0;
 
-  display: grid;
-  grid-auto-rows: 1fr;
-
   width: min(70%, 30rem);
   height: 80vh;
   height: 80dvh;
 
   // Centers the content
   margin: auto;
+
+  display: grid;
+  grid-auto-rows: 1fr;
 `;
 
 const Elevator = styled(animated.div)`
   position: absolute;
+
+  // Aligns it at the bottom
+  // Its height is dynamically calculated below
   bottom: 0;
   left: 0;
   right: 0;
@@ -58,7 +65,7 @@ export const Building = ({ floorCount }: BuildingProps) => {
 
   useEffect(() => {
     api.start({ y: `${-(currentFloor * 100)}%` });
-  }, [api, currentFloor, itemSizePercent]);
+  }, [api, currentFloor]);
 
   return (
     <MainContent>
