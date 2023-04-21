@@ -4,16 +4,24 @@ import { useSpring, animated } from "@react-spring/web";
 import { useElevator } from "elevator-core";
 import { range } from "utils";
 import { Floor } from "./Floor";
+import { visuallyHidden } from "../mixins";
 
-const MainContent = styled.main``;
+const MainContent = styled.main`
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+`;
 
 const Title = styled.h1`
   font-size: 3.5rem;
   text-align: center;
+
+  ${visuallyHidden};
 `;
 
 const List = styled.div`
-  position: relative;
+  position: absolute;
+  inset: 0;
 
   display: grid;
   grid-auto-rows: 1fr;
@@ -22,7 +30,8 @@ const List = styled.div`
   height: 80vh;
   height: 80dvh;
 
-  margin-inline: auto;
+  // Centers the content
+  margin: auto;
 `;
 
 const Elevator = styled(animated.div)`

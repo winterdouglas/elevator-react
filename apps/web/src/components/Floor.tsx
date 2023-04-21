@@ -1,7 +1,7 @@
+import { HTMLAttributes } from "react";
 import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Indicator } from "./Indicator";
-import { HTMLAttributes } from "react";
 
 const FloorCell = styled.section`
   position: relative;
