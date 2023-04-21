@@ -9,7 +9,7 @@ import { visuallyHidden } from "../mixins";
 const MainContent = styled.main`
   position: relative;
 
-  // This is done to facilitate centering the list
+  /* This is done to facilitate centering the list */
   width: 100vw;
   width: 100dvw;
   height: 100vh;
@@ -26,14 +26,12 @@ const Title = styled.h1`
 const List = styled.div`
   position: absolute;
   inset: 0;
-
   width: min(70%, 30rem);
   height: 80vh;
   height: 80dvh;
 
-  // Centers the content
+  /* Centers the content */
   margin: auto;
-
   display: grid;
   grid-auto-rows: 1fr;
 `;
@@ -41,8 +39,7 @@ const List = styled.div`
 const Elevator = styled(animated.div)`
   position: absolute;
 
-  // Aligns it at the bottom
-  // Its height is dynamically calculated below
+  /* Aligns it at the bottom. Its height is dynamically calculated */
   bottom: 0;
   left: 0;
   right: 0;
