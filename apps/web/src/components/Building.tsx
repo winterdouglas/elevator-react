@@ -5,11 +5,7 @@ import { useElevator } from "elevator-core";
 import { range } from "utils";
 import { Floor } from "./Floor";
 
-const MainContent = styled.main`
-  padding-block: 2rem;
-  width: min(60%, 40rem);
-  margin-inline: auto;
-`;
+const MainContent = styled.main``;
 
 const Title = styled.h1`
   font-size: 3.5rem;
@@ -18,6 +14,15 @@ const Title = styled.h1`
 
 const List = styled.div`
   position: relative;
+
+  display: grid;
+  grid-auto-rows: 1fr;
+
+  width: min(70%, 30rem);
+  height: 80vh;
+  height: 80dvh;
+
+  margin-inline: auto;
 `;
 
 const Elevator = styled(animated.div)`

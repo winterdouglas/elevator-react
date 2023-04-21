@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Indicator } from "./Indicator";
+import { HTMLAttributes } from "react";
 
 const FloorCell = styled.section`
   position: relative;
   isolation: isolate;
-  min-height: 10rem;
   display: flex;
   align-items: center;
 
@@ -22,6 +22,7 @@ const FloorCell = styled.section`
 
 const FloorTitle = styled.h2`
   font-size: 3rem;
+  color: ${(props) => props.theme.text};
 `;
 
 const ButtonsContainer = styled.div`
@@ -52,7 +53,7 @@ const PressableFloor = styled.button`
   }
 `;
 
-type FloorProps = {
+type FloorProps = HTMLAttributes<HTMLElement> & {
   floorCount: number;
   floor: number;
   isElevatorPresent?: boolean;
@@ -72,12 +73,14 @@ export const Floor = ({
   onPress,
   onPressUp,
   onPressDown,
+  ...props
 }: FloorProps) => {
   return (
     <FloorCell
       role="option"
       aria-label={`Floor ${floor}`}
-      aria-selected={isElevatorPresent}>
+      aria-selected={isElevatorPresent}
+      {...props}>
       <PressableFloor
         aria-label={`Call floor ${floor}`}
         aria-disabled={isElevatorPresent}

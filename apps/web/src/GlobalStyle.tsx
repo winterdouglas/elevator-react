@@ -8,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     color-scheme: dark light;
     color: ${(props) => props.theme.text};
     background-color: ${(props) => props.theme.background};
+
+    // Disables scrolling entirely since this particular app doesn't need it.
+    overflow: hidden;
   }
 
   *,
