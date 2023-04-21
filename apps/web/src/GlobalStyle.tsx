@@ -4,12 +4,11 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 400;
-
     color-scheme: dark light;
     color: ${(props) => props.theme.text};
     background-color: ${(props) => props.theme.background};
-
-    // Disables scrolling entirely since this particular app doesn't need it.
+    
+    /* Disables scrolling entirely since this particular app doesn't need it. */
     overflow: hidden;
   }
 
@@ -39,8 +38,12 @@ export const GlobalStyle = createGlobalStyle`
   /* Set core body defaults */
   body {
     min-height: 100vh;
-    text-rendering: optimizeSpeed;
+    text-rendering: optimizespeed;
     line-height: 1.5;
+  }
+
+  a, button {
+    cursor: pointer;
   }
 
   /* A elements that don't have a class get default styles */
@@ -55,10 +58,6 @@ export const GlobalStyle = createGlobalStyle`
   video {
     max-width: 100%;
     display: block;
-  }
-
-  a, button {
-    cursor: pointer;
   }
 
   /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */

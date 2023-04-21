@@ -6,7 +6,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-width: 0;
   background-color: transparent;
   color: ${(props) => props.theme.primary};

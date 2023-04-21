@@ -37,7 +37,6 @@ const PressableFloor = styled.button`
   z-index: -1;
   border-width: 0;
   background: transparent;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
