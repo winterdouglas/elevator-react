@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FloorButton } from "./FloorButton";
 import { Indicator } from "./Indicator";
 
-const FloorCell = styled.section`
+const FloorCell = styled.div`
   position: relative;
   isolation: isolate;
   display: flex;
@@ -76,7 +76,7 @@ export const Floor = ({
 }: FloorProps) => {
   return (
     <FloorCell
-      role="option"
+      role="listitem"
       aria-label={`Floor ${floor}`}
       aria-selected={isElevatorPresent}
       {...props}>

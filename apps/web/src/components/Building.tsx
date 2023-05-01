@@ -67,7 +67,7 @@ export const Building = ({ floorCount }: BuildingProps) => {
   return (
     <MainContent>
       <Title>Elevator</Title>
-      <List role="listbox" aria-label="Floors">
+      <List role="list" aria-label="Floors">
         <Elevator role="none" style={styles} />
         {floors.map((floor) => {
           return (
